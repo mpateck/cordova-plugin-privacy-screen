@@ -8,6 +8,7 @@
       </feature>
     </config-file>
 
+    <source-file src="src/ios/CordovaPluginPrivacyScreen.h" />
     <source-file src="src/ios/CordovaPluginPrivacyScreen.m" />
   </platform>
   <platform name="android">
@@ -21,5 +22,7 @@
 
 		<source-file src="src/android/CordovaPluginPrivacyScreen.java" target-dir="src/de/pateck/privacyscreen"/>
 	</platform>
-
+  <js-module src="www/CordovaPrivacyScreenPlugin.js" name="privacyscreen">
+         <clobbers target="window.PrivacyScreen" />
+     </js-module>
 </plugin>

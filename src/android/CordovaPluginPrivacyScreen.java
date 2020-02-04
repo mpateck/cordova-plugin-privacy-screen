@@ -1,9 +1,3 @@
-/**
- * PrivacyScreenPlugin.java Cordova Plugin Implementation
- * Created by Tommy-Carlos Williams on 18/07/14.
- * Copyright (c) 2014 Tommy-Carlos Williams. All rights reserved.
- * MIT Licensed
- */
 package de.pateck.privacyscreen;
 
 import org.apache.cordova.CordovaPlugin;

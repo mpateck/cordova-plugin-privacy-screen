@@ -1,12 +1,21 @@
-#import "AppDelegate.h"
+#import "CordovaPluginPrivacyScreen.h"
 
-@interface AppDelegate (CordovaPluginPrivacyScreen) {}
+@implementation CordovaPluginPrivacyScreen {
 
-@end
+- (void)pluginInitialize
+{
+  if ([self settingForKey:@"PrivacyScreenEnabled"]) {
+      self.privacyScreenEnabled = [(NSNumber*)[self settingForKey:@"PrivacyScreenEnabled"] boolValue];
+  }
 
-@implementation AppDelegate (CordovaPluginPrivacyScreen)
+  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onAppDidBecomeActive:)
+                                               name:UIApplicationDidBecomeActiveNotification object:nil];
 
-- (void)applicationWillResignActive:(UIApplication *)application {
+  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onAppWillResignActive:)
+                                               name:UIApplicationWillResignActiveNotification object:nil];
+}
+
+- (void)onAppWillResignActive:(UIApplication *)application {
     self.window.backgroundColor = [UIColor clearColor];
 
     UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleExtraLight];
@@ -25,7 +34,7 @@
     }];
 }
 
-- (void)applicationDidBecomeActive:(UIApplication *)application {
+- (void)onAppDidBecomeActive:(UIApplication *)application {
     // grab a reference to our custom blur view
     UIView *blurEffectView = [self.window viewWithTag:1234];
 
@@ -38,4 +47,17 @@
     }];
 }
 
+- (void)enabled:(CDVInvokedUrlCommand*)command
+ {
+     id value = [command.arguments objectAtIndex:0];
+     if (!([value isKindOfClass:[NSNumber class]])) {
+         value = [NSNumber numberWithBool:NO];
+     }
+
+     self.privacyScreenEnabled = [value boolValue];
+ }
 @end
+
+
+
+
