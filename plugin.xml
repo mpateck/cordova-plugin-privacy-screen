@@ -22,7 +22,7 @@
 
 		<source-file src="src/android/CordovaPluginPrivacyScreen.java" target-dir="src/de/pateck/privacyscreen"/>
 	</platform>
-  <js-module src="www/CordovaPrivacyScreenPlugin.js" name="privacyscreen">
+  <js-module src="www/CordovaPluginPrivacyScreen.js" name="privacyscreen">
          <clobbers target="window.PrivacyScreen" />
      </js-module>
 </plugin>
