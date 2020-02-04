@@ -1,0 +1,32 @@
+{
+  "name": "cordova-plugin-privacy-screen",
+  "version": "0.0.1",
+  "description": "Blurs your app when put into the background to prevent iOS snapshot feature from showing sensitive information. On Android its just a black screen",
+  "cordova": {
+    "id": "cordova-plugin-privacy-screen",
+    "platforms": [
+      "ios",
+      "android"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mpateck/cordova-plugin-privacy-screen.git"
+  },
+  "keywords": [
+    "cordova",
+    "ecosystem:cordova",
+    "cordova-ios",
+    "hipaa",
+    "privacy",
+    "snapshot",
+    "switcher",
+    "secure"
+  ],
+  "author": "Matthias Pateck",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mpateck/cordova-plugin-privacy-screen/issues"
+  },
+  "homepage": "https://github.com/mpateck/cordova-plugin-privacy-screen#readme"
+}

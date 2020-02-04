@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin id="cordova-plugin-privacy-screen" version="1.0.0" xmlns="http://apache.org/cordova/ns/plugins/1.0">
+  <name>CordovaPluginPrivacyScreen</name>
+  <platform name="ios">
+    <config-file parent="/*" target="config.xml">
+      <feature name="CordovaPluginPrivacyScreen">
+        <param name="ios-package" value="CordovaPluginPrivacyScreen" />
+      </feature>
+    </config-file>
+
+    <source-file src="src/ios/CordovaPluginPrivacyScreen.m" />
+  </platform>
+  <platform name="android">
+
+    <config-file parent="/*" target="res/xml/config.xml">
+      <feature name="CordovaPluginPrivacyScreen">
+        <param name="android-package" value="de.pateck.privacyscreen.CordovaPluginPrivacyScreen"/>
+        <param name="onload" value="true" />
+      </feature>
+    </config-file>
+
+		<source-file src="src/android/CordovaPluginPrivacyScreen.java" target-dir="src/de/pateck/privacyscreen"/>
+	</platform>
+
+</plugin>
